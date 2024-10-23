@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영화 검색</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+    <div class = "title">
+        <h1>영화 검색</h1>
+        </div>
+        <div class="search">
+        <!-- autocomplete = "off" 는 캐시 안나오게 해줌 ㅇㅇ 아주 좋은 기능! -->
+        <input placeholder= "영화를 입력해 주세요." class="search" id="query" autocomplete="off" />
+        <button type="button" class="search_btn"> 검색하기 </button>
+        <button type="button" class="reset_btn"> 돌아가기 </button>
+    </div>
+    </header>
+    <div class="movie_container" id="movie_container"></div>
+    <div class="modal">
+        <div class="popup">
+        <div class="modal_img_box">
+            <img class="modal_img_item" src="" alt="" />
+            <div class="modal_info">
+                <p class="modal_title"></p>
+                <p class="modal_comment"></p>
+                <p class="modal_p"> <span class="modal_date"></span>
+                </p>
+                <p class="modal_p"> <span class="modal_rating"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="modal_close_btn">
+        <button type="button" class="close_btn"> 닫기 </button>
+    </div>
+    </div>
+    <script src="api_ui.js" type="module"></script>
+    <script src="modal.js" type="module"></script>
+</body>
+</html>
