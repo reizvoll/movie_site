@@ -3,6 +3,8 @@ import { movies } from './api_ui.js';
 const modalWindow = document.querySelector(".modal");
 const closeBtn = document.querySelector(".modal_close_btn");
 const general = document.getElementById("movie_container");
+const wholeCards = document.querySelector(".modal_img_box");
+const background = document.querySelector(".background_color");
 
 function modalMovies(movie) {
     document.querySelector(".modal_title").textContent = movie.title;
@@ -24,10 +26,32 @@ general.addEventListener("click", (e) => {
         if (selectMovie) {
             modalMovies(selectMovie);
             modalWindow.style.display = "block";
+            openModal();
         }
     }
 });
 
 closeBtn.addEventListener("click", () => {
     modalWindow.style.display = "none";
+});
+
+function openModal() {
+    modalWindow.classList.add("show");
+    background.classList.add("show");
+    general.style.pointerEvents = "none"; // 모달 외부 클릭 방지
+}
+
+function closeModal() {
+    modalWindow.classList.remove("show");
+    background.classList.remove("show");
+    general.style.pointerEvents = "auto"; // 모달 외부 클릭 가능하게
+}
+
+// 모달 닫기 버튼 클릭 시
+closeBtn.addEventListener("click", closeModal);
+
+// 배경 클릭 시 모달 닫기
+background.addEventListener("click", function() {
+    console.log('배경이 클릭됨'); // 배경이 클릭되는지 확인
+    closeModal(); // 모달 닫기
 });

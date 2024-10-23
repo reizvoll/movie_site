@@ -52,7 +52,7 @@ function displayMovie(display) {
   general.innerHTML = "";  // 기존 내용을 초기화
   display.forEach((movie) => {
       const movieElementHTML = `
-      <div class="all_cards">
+      <div class="cards">
       <div class="card_img_box" data-id="${movie.id}">
         <img
           class="card_img_item"
