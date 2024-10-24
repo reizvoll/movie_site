@@ -131,13 +131,11 @@ header {
 
 .close_btn {
     background-color: white;
-    border: none;
+    border: transparent;
     border-radius: 5px;
     color: black;
     font-size: 16px;
     font-weight: bold;
-    padding: 10px 20px;
-    align-self: flex-end;
 }
 
 .close_btn:hover {
