@@ -5,7 +5,6 @@ body {
     background-color: #f3f3f3;
 }
 
-/* div class 없이도 가능한 헤더! 대신 . 빼야함. */
 header {
     display: flex;
     flex-direction: column;
@@ -15,10 +14,10 @@ header {
 }
 
 .title {
-    color: white;
-    align-items: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    color: white;
 }
 
 .movie_container {
@@ -31,13 +30,12 @@ header {
 }
 
 .cards {
+    padding: 1px;
     background-color: white;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    padding: 1px;
 }
 
-/* 영화사진 */
 .card_img_item {
     width: 250px;
     height: 350px;
@@ -49,7 +47,6 @@ header {
     display: none;
 }
 
-/* 영화제목,평점 */
 .card_title_box {
     padding: 10px;
     margin: 10px;
@@ -58,30 +55,27 @@ header {
     flex-direction: column;
 }
 
-/* 검색창 */
 .search {
     display: flex;
     gap: 30px;
 }
 
-/* 검색창 */
 .search input {
     width: 500px;
     height: 25px;
-    border-color: #585858;
     border-radius: 10px;
-    padding: 5px;
+    border-color: #585858;
+    padding: 5px 5px 5px 18px;
     font-size: 16px;
-    padding-left: 18px;
 }
 
 .search_btn {
-    border: none;
-    background-color: #545454;
-    color: white;
-    padding: 8px 15px;
+    border: transparent;
     border-radius: 5px;
+    background-color: #545454;
+    padding: 8px 15px;
     font-size: 16px;
+    color: white;
 }
 
 .search_btn:hover {
@@ -89,56 +83,50 @@ header {
 }
 
 .reset_btn {
-    border: none;
-    background-color: #545454;
-    color: white;
-    padding: 8px 15px;
+    border: transparent;
     border-radius: 5px;
+    background-color: #545454;
+    padding: 8px 15px;
     font-size: 16px;
+    color: white;
 }
 
 .reset_btn:hover {
     background-color: #929292;
 }
 
-/*모달 팝업 영역 스타일링*/
 .modal {
-    /*팝업 배경*/
     display: none;
-    /*평소에는 보이지 않도록*/
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1000;
-    background-color: #ffffff;
-    padding: 20px;
     border-radius: 10px;
+    background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
 }
 
-
 .popup {
-    /*팝업*/
+    display: flex;
+    flex-direction: column;
     position: fixed;
+    gap: 5px;
     top: 50%;
     left: 50%;
     width: 450px;
     transform: translate(-50%, -50%);
-    padding: 20px;
     border-radius: 5px;
     background: #ffffff;
-    display: flex;
-    gap: 5px;
-    flex-direction: column;
     transition: box-shadow 0.2s;
-    border: none;
+    border: transparent;
+    padding: 20px;
 }
-
 
 .modal_close_btn {
     display: flex;
-    justify-content: flex-end; /* 오른쪽 정렬 */
+    justify-content: flex-end;
 }
 
 .close_btn {
@@ -158,8 +146,8 @@ header {
 
 .modal_img_box {
     display: flex;
-    flex-direction: column; /* 이미지와 정보를 수직으로 배치 */
-    align-items: center;    /* 가운데 정렬 */
+    flex-direction: column;
+    align-items: center;
     width: 100%;
 }
 
@@ -170,8 +158,8 @@ header {
 }
 
 .modal_info {
-    padding: 10px;
     text-align: center;
+    padding: 10px;
 }
 
 .modal_title {
@@ -191,6 +179,7 @@ header {
 }
 
 .background_color {
+    display: none; 
     position: fixed;
     top: 0;
     left: 0;
@@ -198,13 +187,12 @@ header {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 999;
-    display: none; 
 }
 
 .modal.show {
-    display: block; /* 모달이 열릴 때 표시 */
+    display: block;
 }
 
 .background_color.show {
-    display: block; /* 배경도 함께 표시 */
+    display: block;
 }

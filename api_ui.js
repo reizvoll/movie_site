@@ -9,7 +9,6 @@ const searchInput = document.querySelector("#query");
 const searchBtn = document.querySelector(".search_btn");
 const resetBtn = document.querySelector(".reset_btn")
 
-// 전체 영화 목록 가져오기
 async function fetchMovies() {
     try {
         const response = await fetch(apiUrl, {
@@ -28,7 +27,6 @@ async function fetchMovies() {
     }
 }
 
-//이놈의 망할뻐킹쿼리...
 async function searchMovie () {
   const searchUrl=`https://api.themoviedb.org/3/search/movie?query=${searchInput.value}&include_adult=false&language=ko-KR&page=1`
   try {
@@ -47,9 +45,8 @@ async function searchMovie () {
   }
 }
 
-// 영화들을 화면에 출력
 function displayMovie(display) {
-  general.innerHTML = "";  // 기존 내용을 초기화
+  general.innerHTML = "";
   display.forEach((movie) => {
       const movieElementHTML = `
       <div class="cards">
@@ -77,16 +74,13 @@ function displayMovie(display) {
   });
 }
 
-// 검색 버튼 클릭 시 searchMovie 함수 실행
 searchBtn.addEventListener("click", () => {
-  searchMovie(); // 항상 첫 번째 페이지를 불러옴
+  searchMovie();
 });
 
-// 초기화 버튼 클릭 시 전체 영화 다시 불러오기
 resetBtn.addEventListener("click", () => {
-  searchInput.value = "";  // 검색어 초기화
-  fetchMovies();  // 전체 영화 다시 불러오기
+  searchInput.value = "";
+  fetchMovies();
 });
 
-// 페이지 로드 시 전체 영화 가져오기
 fetchMovies();
